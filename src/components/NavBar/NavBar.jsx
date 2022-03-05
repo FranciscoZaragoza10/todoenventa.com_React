@@ -1,3 +1,5 @@
+import CartWidget from "../CartWidget/CartWidget";
+
 const NavBar = () => {
   return (
     <header>
@@ -53,6 +55,7 @@ const NavBar = () => {
               </button>
             </form>
           </div>
+          <CartWidget />
         </div>
       </nav>
     </header>
