@@ -1,0 +1,33 @@
+.faq__section__table {
+  display: flex;
+  color: #4a00e0;
+  background-image: url(../imgs/back_faq.jpg);
+  background-size: cover;
+  background-position: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  h1 {
+    text-align: center;
+    background: $footergradient;
+    backdrop-filter: blur(10%);
+    width: 100%;
+  }
+  &--td {
+    padding-left: 5%;
+    width: 400px;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    background-color: rgba(245, 247, 243, 0.753);
+    backdrop-filter: blur(10%);
+  }
+  &--th {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-weight: 700;
+    font-size: 1.3em;
+    background-color: rgba(0, 255, 255, 0.568);
+    backdrop-filter: blur(10%);
+    text-align: center;
+  }
+}

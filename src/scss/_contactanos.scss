@@ -1,0 +1,84 @@
+.main__contacto {
+  position: relative;
+  h1 {
+    position: relative;
+    padding-top: 3%;
+  }
+}
+.main__contacto::before {
+  filter: opacity(60%) grayscale(60%) brightness(90%);
+  background-position: center;
+  background-image: url(../imgs/faq_new.jpg);
+  display: flex;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  justify-content: center;
+  align-content: center;
+  min-height: 70vh;
+  background-size: cover;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  content: "";
+}
+.main__form {
+  position: relative;
+  color: #4a00e0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+}
+#name {
+  width: 70%;
+  margin: 0% 15% 0% 15%;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(245, 245, 245, 0.815);
+  border-bottom: 2px solid blue;
+}
+#name:focus {
+  border: none;
+}
+
+#email {
+  background-color: rgba(245, 245, 245, 0.815);
+  border: none;
+  width: 70%;
+  margin: 0% 15% 0% 15%;
+  border-radius: 10px;
+  border-bottom: 2px solid blue;
+}
+#email:focus {
+  border: none;
+}
+#rol {
+  text-align: center;
+}
+#estado {
+  width: 70%;
+  margin: 0% 40% 0% 40%;
+}
+#comentarios {
+  width: 70%;
+  margin: 0% 15% 0% 15%;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(245, 245, 245, 0.815);
+  border-bottom: 2px solid blue;
+}
+
+.form {
+  color: $light;
+  border-radius: 6px;
+  background: $primary;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  padding: 1px 3px 1px 3px;
+}
+.check {
+  transform: scale(2);
+}
+.cont_back {
+  color: $primary;
+}

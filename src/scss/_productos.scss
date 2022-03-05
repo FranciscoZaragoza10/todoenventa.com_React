@@ -1,0 +1,16 @@
+.car-productos {
+  width: 75vw;
+  height: 350px;
+  position: relative;
+  margin: auto;
+}
+.img__car {
+  height: 350px;
+  width: 100%;
+}
+.img__car:hover {
+  filter: opacity(0.8);
+}
+.carousel-item img {
+  filter: brightness(60%);
+}
