@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <ItemListContainer />
+      <ItemListContainer saludo={"Soy ListContainer"} />
     </div>
   );
 }
