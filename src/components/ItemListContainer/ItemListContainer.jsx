@@ -6,7 +6,7 @@ const ItemListContainer = ({ saludo }) => {
       <div className="px-3">
         <h1>{saludo}</h1>
       </div>
-      <ItemCount stock="5" initial="1" />
+      <ItemCount stock={5} initial={1} />
     </>
   );
 };

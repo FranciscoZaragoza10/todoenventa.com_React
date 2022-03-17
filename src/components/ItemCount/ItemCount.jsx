@@ -1,13 +1,19 @@
 import { useState, useEffect } from "react";
 
 function ItemCount({ stock, initial }) {
-  const [count, setCount] = useState(Number(initial));
+  const [count, setCount] = useState(initial);
   useEffect(() => {});
   const handleCount = () => {
-    setCount(count + 1);
+    if (count < stock) {
+      setCount(count + 1);
+    } else {
+      alert("Solo hay disponibles: " + stock);
+    }
   };
   const reduceCount = () => {
-    setCount(count - 1);
+    if (count > initial) {
+      setCount(count - 1);
+    }
   };
   const onAdd = () => {
     console.log("Agregaste " + count + " items");
@@ -15,11 +21,17 @@ function ItemCount({ stock, initial }) {
   return (
     <>
       <h3>Item</h3>
-      <div>
-        <label>{count}</label>
-        <h4 onClick={handleCount}>+</h4>
-        <h4 onClick={reduceCount}>-</h4>
-        <button onClick={onAdd}>Agregar</button>
+      <div className="d-flex col-3 mx-auto flex-wrap justify-content-between shadow-lg">
+        <h4 className="text-primary fs-3" onClick={reduceCount}>
+          -
+        </h4>
+        <label className="text-primary fs-3">{count}</label>
+        <h4 className="text-primary fs-3" onClick={handleCount}>
+          +
+        </h4>
+        <button className="btn btn-primary" onClick={onAdd}>
+          Agregar
+        </button>
       </div>
     </>
   );
