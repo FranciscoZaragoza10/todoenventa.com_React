@@ -48,6 +48,7 @@ const producto = {
   nombre: "Playera Tev",
   precio: 110,
   src: "/imgs/index_productos_playera.png",
+  dtl: "Playera Tev es una de las prendas fabricadas por nuestros compañeros del mercado de Chinoncuac, Edo de Méx, en donde la causa se vera reflejada en el estampado de la misma",
 };
 
 export const getFetchOne = new Promise((resolve, reject) => {

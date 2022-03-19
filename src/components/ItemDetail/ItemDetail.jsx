@@ -18,6 +18,7 @@ function ItemDetail({ producto }) {
             <i className="fas fa-shopping-bag text-primary"></i> $
             {producto.precio}
           </h4>
+          <h2 className="text-primary">{producto.dtl}</h2>
         </div>
       </div>
     </>
