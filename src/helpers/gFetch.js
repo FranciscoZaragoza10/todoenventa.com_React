@@ -38,3 +38,21 @@ export const gFetch = new Promise((resolve, reject) => {
     }, 2000);
   }
 });
+const producto = {
+  id: 2,
+  nombre: "Playera Tev",
+  precio: 110,
+  src: "imgs/index_productos_playera.png",
+};
+
+export const getFetchOne = new Promise((resolve, reject) => {
+  //acciones
+  let condition = true;
+  if (condition) {
+    setTimeout(() => {
+      resolve(producto);
+    }, 3000);
+  } else {
+    reject("400 - not found");
+  }
+});

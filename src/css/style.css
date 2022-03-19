@@ -11652,11 +11652,16 @@ h1,
 .carrito_prod {
   height: 200px;
 }
+.carrito_detail {
+  height: 360px;
+}
 
 .img__carrito {
   height: 190px;
 }
-
+.img__detalle__producto {
+  height: 300px;
+}
 .nosotros__main {
   background-image: url(../imgs/artesano2.jpg);
   min-height: 70vh;
