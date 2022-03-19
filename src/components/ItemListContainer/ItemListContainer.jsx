@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { gFetch } from "../../helpers/gFetch";
 
 import ItemCount from "../ItemCount/ItemCount";
@@ -8,12 +9,21 @@ export const ItemListContainer = ({ saludo }) => {
   const [bool, setbool] = useState(true);
   const [loading, setloading] = useState(true);
   const [prods, setprods] = useState([]);
+  const { id } = useParams();
+
   useEffect(() => {
-    gFetch
-      .then((resp) => setprods(resp))
-      .catch((err) => console.log(err))
-      .finally((loading) => setloading(false));
-  }, []);
+    if (id) {
+      gFetch
+        .then((resp) => setprods(resp.filter((prod) => prod.categoria === id)))
+        .catch((err) => console.log(err))
+        .finally(() => setloading(false));
+    } else {
+      gFetch
+        .then((resp) => setprods(resp))
+        .catch((err) => console.log(err))
+        .finally(() => setloading(false));
+    }
+  }, [id]);
 
   return (
     <>

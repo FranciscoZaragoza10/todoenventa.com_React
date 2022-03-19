@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
 
 const NavBar = () => {
@@ -6,8 +7,12 @@ const NavBar = () => {
       <nav className="navbar navbar-expand-sm navbar-dark">
         <div className="container-fluid">
           <div className="p-3 bg-image container-fluid col-sm-3 col-6 logo">
-            <a className="logo__link" href="index.html"></a>
+            <NavLink to="/">
+              {" "}
+              <p className="logo__link"></p>{" "}
+            </NavLink>
           </div>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -18,12 +23,22 @@ const NavBar = () => {
           </button>
           <div className="collapse navbar-collapse" id="mynavbar">
             <ul className="navbar-nav mx-auto align-items-center">
-              <li className="nav-item">
-                <a className="nav-link text-primary" href="index.html">
-                  Inicio
-                </a>
-              </li>
-              <li className="nav-item">
+              <NavLink to="/">
+                <li className="nav-item">
+                  <p className="nav-link text-primary">Inicio</p>
+                </li>
+              </NavLink>
+              <NavLink to="/categoria/ropa">
+                <li className="nav-item">
+                  <p className="nav-link text-primary">Ropa</p>
+                </li>
+              </NavLink>
+              <NavLink to="/categoria/accesorios">
+                <li className="nav-item">
+                  <p className="nav-link text-primary">Accesorios</p>
+                </li>
+              </NavLink>
+              {/* <li className="nav-item">
                 <a className="nav-link text-primary" href="productos.html">
                   Productos
                 </a>
@@ -32,16 +47,12 @@ const NavBar = () => {
                 <a className="nav-link text-primary" href="nosotros.html">
                   Nosotros
                 </a>
+              </li> */}
+              <li className="nav-item">
+                <p className="nav-link text-primary">FAQ</p>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-primary" href="faq.html">
-                  FAQ
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link text-primary" href="contactanos.html">
-                  Contactanos
-                </a>
+                <p className="nav-link text-primary">Contactanos</p>
               </li>
             </ul>
             <form className="d-flex" id="buscar">
@@ -55,7 +66,9 @@ const NavBar = () => {
               </button>
             </form>
           </div>
-          <CartWidget />
+          <NavLink to="/cart">
+            <CartWidget />
+          </NavLink>
         </div>
       </nav>
     </header>

@@ -1,36 +1,38 @@
-import "./css/style.css";
-import "./App.css";
+import { lazy, Suspense } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
+import "./css/style.css";
+import "./App.css";
+import Cart from "./components/Cart/Cart";
+
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <ItemListContainer saludo={"Soy ListContainer"} />
-      <ItemDetailContainer />
-    </div>
+    <Suspense>
+      <BrowserRouter>
+        <div className="App">
+          <NavBar />
+          <Routes>
+            <Route
+              path="/"
+              element={<ItemListContainer saludo={"Soy ListContainer"} />}
+            />
+            <Route
+              path="/categoria/:id"
+              element={<ItemListContainer saludo={"Soy ListContainer"} />}
+            />
+            <Route
+              path="/detalle/:detalleId"
+              element={<ItemDetailContainer />}
+            />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/*" element={<Navigate to="/" />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </Suspense>
   );
 }
 
