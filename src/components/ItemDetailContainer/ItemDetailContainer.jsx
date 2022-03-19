@@ -1,17 +1,18 @@
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useState, useEffect } from "react";
-import { getFetchOne } from "../../helpers/gFetch";
+import { getFetchOne, gFetch } from "../../helpers/gFetch";
 import { useParams } from "react-router-dom";
 
 function ItemDetailContainer() {
-  const [producto, setProducto] = useState({});
+  const [producto, setProducto] = useState([]);
   const { detalleId } = useParams;
   useEffect(() => {
+    // getFetchOne
     getFetchOne
-
-      .then((prod) => setProducto(prod))
+      // .then((res) => setProducto(res.find((prod) => prod.id === detalleId)))
+      .then((res) => setProducto(res))
       .catch((err) => console.log(err));
-  }, []);
+  }, [detalleId]);
 
   return <ItemDetail producto={producto} />;
 }

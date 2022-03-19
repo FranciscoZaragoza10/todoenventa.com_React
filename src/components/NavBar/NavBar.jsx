@@ -61,7 +61,7 @@ const NavBar = () => {
                 type="text"
                 placeholder="Buscar"
               />
-              <button class="btn btn-primary" type="submit">
+              <button className="btn btn-primary" type="submit">
                 Buscar
               </button>
             </form>

@@ -9,7 +9,7 @@ function ItemDetail({ producto }) {
           <img
             className="rounded img__detalle__producto"
             src={producto.src}
-            alt="bolsa"
+            alt={producto.nombre}
           />
           <h3 className="text-primary fs-5 mx-2 my-0 text-center w-100">
             {producto.nombre}
