@@ -31,7 +31,6 @@ export const ItemListContainer = ({ saludo }) => {
         <h1>{saludo}</h1>
         {loading ? <h2>Cargando...</h2> : <ItemList prods={prods} />}
       </div>
-      <ItemCount stock={5} initial={1} />
     </>
   );
 };

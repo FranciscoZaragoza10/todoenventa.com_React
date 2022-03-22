@@ -1,3 +1,8 @@
+import ItemCount from "../ItemCount/ItemCount";
+
+const onAdd = (Items) => {
+  console.log("Usted agrego " + Items + " items");
+};
 function ItemDetail({ producto }) {
   return (
     <>
@@ -18,6 +23,7 @@ function ItemDetail({ producto }) {
             <i className="fas fa-shopping-bag text-primary"></i> $
             {producto.precio}
           </h4>
+          <ItemCount stock={5} initial={1} onAdd={onAdd} />
           <h2 className="text-primary">{producto.dtl}</h2>
         </div>
       </div>
