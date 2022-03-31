@@ -1,9 +1,13 @@
+import { useCartContext } from "../CartContext/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
 
-const onAdd = (Items) => {
-  console.log("Usted agrego " + Items + " items");
-};
 function ItemDetail({ producto }) {
+  const { addToCart, cartList } = useCartContext();
+  const onAdd = (Items) => {
+    console.log("Usted agrego " + Items + " items");
+    addToCart({ ...producto, Items });
+  };
+  console.log(cartList);
   return (
     <>
       <div

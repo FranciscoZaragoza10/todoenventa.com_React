@@ -9,11 +9,21 @@ function ItemDetailContainer() {
   const [loading, setloading] = useState(true);
   useEffect(() => {
     // getFetchOne
-    getFetchOne
-      // .then((res) => setProducto(res.find((prod) => prod.id === detalleId)))
-      .then((res) => setProducto(res))
-      .catch((err) => console.log(err))
-      .finally(() => setloading(false));
+    if (detalleId) {
+      getFetchOne
+        // .then((res) => setProducto(res.find((prod) => prod.id === detalleId)))
+        .then((res) =>
+          setProducto(res.find((producto) => producto.id === detalleId))
+        )
+        .catch((err) => console.log(err))
+        .finally(() => setloading(false));
+    } else {
+      getFetchOne
+        // .then((res) => setProducto(res.find((prod) => prod.id === detalleId)))
+        .then((res) => setProducto(res))
+        .catch((err) => console.log(err))
+        .finally(() => setloading(false));
+    }
   }, [detalleId]);
 
   return (

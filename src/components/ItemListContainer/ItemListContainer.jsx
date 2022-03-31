@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { gFetch } from "../../helpers/gFetch";
 
-import ItemCount from "../ItemCount/ItemCount";
 import ItemList from "../ItemList/ItemList";
 
 export const ItemListContainer = ({ saludo }) => {
