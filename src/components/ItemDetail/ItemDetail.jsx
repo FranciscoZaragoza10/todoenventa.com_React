@@ -8,6 +8,7 @@ function ItemDetail({ producto }) {
     addToCart({ ...producto, Items });
   };
   console.log(cartList);
+  console.log(producto);
   return (
     <>
       <div
