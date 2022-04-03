@@ -16,7 +16,7 @@ function Cart() {
               {prod.precio}
             </h4>
             <h4 className="fw-bold shadow-sm bg-white rounded mx-5">
-              cantidad: {prod.Items}
+              cantidad: {prod.items}
             </h4>
           </div>
         </div>

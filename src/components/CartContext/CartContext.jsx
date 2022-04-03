@@ -11,8 +11,14 @@ export const useCartContext = () => useContext(CartContext);
 // }
 function CartContextProvider({ children }) {
   const [cartList, setcartList] = useState([]);
-  const addToCart = (Item) => {
-    setcartList([...cartList, Item]);
+
+  const addToCart = (item) => {
+    const isInCart = cartList.find((cart) => cart.id === item.id);
+    if (isInCart) {
+      setcartList([...cartList]);
+    } else {
+      setcartList([...cartList, item]);
+    }
   };
   const vaciarCarrito = () => {
     setcartList([]);
