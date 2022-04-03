@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 import { useCartContext } from "../CartContext/CartContext";
 
 function Cart() {
-  const { cartList, vaciarCarrito } = useCartContext();
+  const { cartList, vaciarCarrito, eliminarItem } = useCartContext();
+
   return (
     <div>
       {cartList.map((prod) => (
@@ -18,10 +20,31 @@ function Cart() {
             <h4 className="fw-bold shadow-sm bg-white rounded mx-5">
               cantidad: {prod.items}
             </h4>
+            <button onClick={eliminarItem}>Eliminar Item</button>
           </div>
         </div>
       ))}
-      <button onClick={vaciarCarrito}>Vaciar Carrito</button>
+      {cartList.length > 0 ? (
+        <>
+          {" "}
+          <h2>
+            El monto a pagar es: $
+            {cartList.reduce(
+              (total, prod) => prod.precio * prod.items + total,
+              0
+            )}
+          </h2>
+          <button onClick={vaciarCarrito}>Vaciar Carrito</button>{" "}
+        </>
+      ) : (
+        <Link to="/">
+          {" "}
+          <h2 className="my-5 text-primary">
+            {" "}
+            Regresa a ver nuestros productos para agregar a tu carrito
+          </h2>
+        </Link>
+      )}
     </div>
   );
 }

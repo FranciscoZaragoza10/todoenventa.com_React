@@ -14,17 +14,32 @@ function CartContextProvider({ children }) {
 
   const addToCart = (item) => {
     const isInCart = cartList.find((cart) => cart.id === item.id);
+
     if (isInCart) {
       setcartList([...cartList]);
+      // //   setamount(cartList.reduce((item) => item.precio));
     } else {
       setcartList([...cartList, item]);
+      //   setamount(cartList.reduce((item) => item.precio));
     }
   };
   const vaciarCarrito = () => {
     setcartList([]);
   };
+  const eliminarItem = () => {
+    const newCartList = (item) => {
+      cartList.filter((i) => i.id !== item.id);
+    };
+    setcartList([newCartList]);
+    // setprods(resp.filter((prod) => prod.categoria === id)
+  };
+  const amount = () => {
+    cartList.length();
+  };
   return (
-    <CartContext.Provider value={{ cartList, addToCart, vaciarCarrito }}>
+    <CartContext.Provider
+      value={{ cartList, addToCart, vaciarCarrito, eliminarItem, amount }}
+    >
       {children}
     </CartContext.Provider>
   );

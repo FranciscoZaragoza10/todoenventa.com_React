@@ -3,11 +3,10 @@ import ItemCount from "../ItemCount/ItemCount";
 
 function ItemDetail({ producto }) {
   const { addToCart, cartList } = useCartContext();
-  const [iscant, setiscant] = useState(false);
+
   const onAdd = (items) => {
     console.log("Usted agrego " + items + " items");
     addToCart({ ...producto, items });
-    setiscant(true);
   };
   console.log(cartList);
   console.log(producto);

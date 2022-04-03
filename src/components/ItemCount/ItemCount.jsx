@@ -39,10 +39,16 @@ function ItemCount({ stock, initial, onAdd }) {
           </button>
         </div>
       ) : (
-        <Link to="/cart">
-          {" "}
-          <button className="btn btn-primary">Terminar Compra</button>
-        </Link>
+        <div className="d-flex col-5 mx-auto flex-wrap justify-content-between shadow-lg">
+          <Link to="/cart">
+            {" "}
+            <button className="btn btn-primary">Terminar Compra</button>
+          </Link>
+          <Link to="/">
+            {" "}
+            <button className="btn btn-primary">Seguir Comprando</button>
+          </Link>
+        </div>
       )}
     </>
   );
