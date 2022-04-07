@@ -31,13 +31,25 @@ function CartContextProvider({ children }) {
     setcartList(newCartList);
     // setprods(resp.filter((prod) => prod.categoria === id)
   };
-
+  const precioTotal = () => {
+    return cartList.reduce(
+      (total, prod) => prod.precio * prod.items + total,
+      0
+    );
+  };
   const amount = () => {
     cartList.length();
   };
   return (
     <CartContext.Provider
-      value={{ cartList, addToCart, vaciarCarrito, eliminarItem, amount }}
+      value={{
+        cartList,
+        addToCart,
+        vaciarCarrito,
+        eliminarItem,
+        amount,
+        precioTotal,
+      }}
     >
       {children}
     </CartContext.Provider>

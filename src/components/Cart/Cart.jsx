@@ -1,9 +1,32 @@
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../CartContext/CartContext";
 
 function Cart() {
-  const { cartList, vaciarCarrito, eliminarItem } = useCartContext();
-
+  const { cartList, vaciarCarrito, eliminarItem, precioTotal } =
+    useCartContext();
+  function generarOrden(e) {
+    e.preventDefault();
+    let orden = {};
+    orden.buyer = {
+      name: "fede",
+      phone: "5555667722",
+      email: "test@todoenventa.com",
+    };
+    orden.precio = precioTotal();
+    orden.fecha = "7 Abril";
+    orden.items = cartList.map((cartItem) => {
+      const id = cartItem.id;
+      const nombre = cartItem.nombre;
+      const precio = cartItem.precio;
+      return { id, nombre, precio };
+    });
+    const db = getFirestore();
+    const queryCollection = collection(db, "orders");
+    addDoc(queryCollection, orden).then(({ id }) =>
+      alert("Tu orden fue recibida con identificador:" + id)
+    );
+  }
   return (
     <div>
       {cartList.map((prod) => (
@@ -35,6 +58,7 @@ function Cart() {
             )}
           </h2>
           <button onClick={vaciarCarrito}>Vaciar Carrito</button>{" "}
+          <button onClick={generarOrden}>Generar Orden</button>{" "}
         </>
       ) : (
         <Link to="/">
