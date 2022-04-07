@@ -10,7 +10,8 @@ import Cart from "./components/Cart/Cart";
 import CartContextProvider, {
   CartContext,
 } from "./components/CartContext/CartContext";
-
+import { getFirestoreApp } from "./firebase/config";
+getFirestoreApp();
 function App() {
   return (
     <Suspense>

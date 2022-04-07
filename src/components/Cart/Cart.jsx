@@ -3,7 +3,9 @@ import { useCartContext } from "../CartContext/CartContext";
 
 function Cart() {
   const { cartList, vaciarCarrito, eliminarItem } = useCartContext();
-
+  const eliminarUno = (prod) => {
+    eliminarItem(prod);
+  };
   return (
     <div>
       {cartList.map((prod) => (
@@ -20,7 +22,7 @@ function Cart() {
             <h4 className="fw-bold shadow-sm bg-white rounded mx-5">
               cantidad: {prod.items}
             </h4>
-            <button onClick={eliminarItem}>Eliminar Item</button>
+            <button onClick={eliminarUno}>Eliminar Item</button>
           </div>
         </div>
       ))}
