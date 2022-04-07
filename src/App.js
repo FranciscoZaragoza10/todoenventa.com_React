@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
@@ -7,9 +7,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import "./css/style.css";
 import "./App.css";
 import Cart from "./components/Cart/Cart";
-import CartContextProvider, {
-  CartContext,
-} from "./components/CartContext/CartContext";
+import CartContextProvider from "./components/CartContext/CartContext";
 import { getFirestoreApp } from "./firebase/config";
 getFirestoreApp();
 function App() {

@@ -1,16 +1,8 @@
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useState, useEffect } from "react";
-import { gFetch } from "../../helpers/gFetch";
+
 import { useParams } from "react-router-dom";
-import {
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  getFirestore,
-  query,
-  where,
-} from "firebase/firestore";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 function ItemDetailContainer() {
   const [producto, setproducto] = useState([]);

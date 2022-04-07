@@ -1,19 +1,15 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { gFetch } from "../../helpers/gFetch";
 
 import ItemList from "../ItemList/ItemList";
 import {
   getFirestore,
-  doc,
-  getDoc,
   collection,
   getDocs,
   query,
   where,
 } from "firebase/firestore";
 export const ItemListContainer = ({ saludo }) => {
-  const [bool, setbool] = useState(true);
   const [loading, setloading] = useState(true);
   const [prods, setprods] = useState([]);
   const { id } = useParams();
