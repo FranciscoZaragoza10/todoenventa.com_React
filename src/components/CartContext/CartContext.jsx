@@ -16,6 +16,7 @@ function CartContextProvider({ children }) {
     const isInCart = cartList.find((cart) => cart.id === item.id);
 
     if (isInCart) {
+      isInCart.items += item.items;
       setcartList([...cartList]);
       // //   setamount(cartList.reduce((item) => item.precio));
     } else {
