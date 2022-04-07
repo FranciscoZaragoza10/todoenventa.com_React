@@ -26,9 +26,9 @@ function CartContextProvider({ children }) {
   const vaciarCarrito = () => {
     setcartList([]);
   };
-  const eliminarItem = (prod) => {
-    const newCartList = cartList.filter((i) => i.id !== prod.id);
-    setcartList([newCartList]);
+  const eliminarItem = (item) => {
+    const newCartList = cartList.filter((i) => i.id !== item);
+    setcartList(newCartList);
     // setprods(resp.filter((prod) => prod.categoria === id)
   };
 
