@@ -42,7 +42,7 @@ export const ItemListContainer = ({ saludo }) => {
             }))
           )
         )
-        .catch((err) => console.log(err))
+
         .finally(() => setloading(false));
     } else {
       const db = getFirestore();
@@ -56,7 +56,7 @@ export const ItemListContainer = ({ saludo }) => {
             }))
           )
         )
-        .catch((err) => console.log(err))
+
         .finally(() => setloading(false));
     }
   }, [id]);

@@ -9,6 +9,7 @@ import "./App.css";
 import Cart from "./components/Cart/Cart";
 import CartContextProvider from "./components/CartContext/CartContext";
 import { getFirestoreApp } from "./firebase/config";
+import Footer from "./components/Footer/Footer";
 getFirestoreApp();
 function App() {
   return (
@@ -17,14 +18,23 @@ function App() {
         <CartContextProvider>
           <div className="App">
             <NavBar />
+
             <Routes>
               <Route
                 path="/"
-                element={<ItemListContainer saludo={"Soy ListContainer"} />}
+                element={
+                  <ItemListContainer
+                    saludo={"Encuentra, compra y disfruta tu producto"}
+                  />
+                }
               />
               <Route
                 path="/categoria/:id"
-                element={<ItemListContainer saludo={"Soy ListContainer"} />}
+                element={
+                  <ItemListContainer
+                    saludo={"Encuentra, compra y disfruta tu producto"}
+                  />
+                }
               />
               <Route
                 path="/detalle/:detalleId"
@@ -35,6 +45,7 @@ function App() {
             </Routes>
           </div>
         </CartContextProvider>
+        <Footer />
       </BrowserRouter>
     </Suspense>
   );
